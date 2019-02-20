@@ -1,0 +1,6 @@
+#!/bin/bash
+sudo apt-get update
+sudo apt-get install docker.io -y
+sudo sysctl vm.max_map_count=262144
+sudo docker pull codelibs/fess
+sudo docker run -p 8080:8080 -p 9200:9200 -d --name fess codelibs/fess
