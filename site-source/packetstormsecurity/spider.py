@@ -10,5 +10,5 @@ start_urls = ['https://packetstormsecurity.com/files/tags/exploit/']
 
 def parse(self, response):
 l = ItemLoader(item=PacketstormsecurityItem(), response=response)
-l.add_css('element', 'dl *::text')
+l.add_css('element', 'div#m > dl *::text')
 return l.load_item()
