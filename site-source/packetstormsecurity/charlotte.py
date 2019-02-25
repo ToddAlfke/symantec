@@ -11,8 +11,6 @@ class CharlotteSpider(scrapy.Spider):
 
     def parse(self, response):
         all_items = response.xpath('//*[contains(concat( " ", @class, " " ), concat( " ", "file", " " ))]')
-        all_links = response.css('.ico:link').extract()
-        print(all_links)
         for item in all_items:
             title = item.css('.ico::text').extract()
             refer = item.css('.refer *::text').extract()
@@ -20,7 +18,7 @@ class CharlotteSpider(scrapy.Spider):
             detail = item.css('p::text').extract()
             tags = item.css('.tags *::text').extract()
             cve = item.css('.cve *::text').extract()
-            link = all_links
+            link = item.css('.ico::attr(href)').extract()
             yield {
                 'title' : title,
                 'refer' : refer,
