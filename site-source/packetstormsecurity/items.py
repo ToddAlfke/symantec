@@ -1,5 +1,10 @@
 import scrapy
 
 class PacketstormsecurityItem(scrapy.Item):
-    #Item elements from spider crawl
-	element = scrapy.Field()
+    title = scrapy.Field()
+    refer = scrapy.Field()
+    datetime = scrapy.Field()
+    detail = scrapy.Field()
+    tags = scrapy.Field()
+    cve = scrapy.Field()
+    link = scrapy.Field()
