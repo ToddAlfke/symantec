@@ -71,9 +71,9 @@ ITEM_PIPELINES = {
 'scrapyelasticsearch.scrapyelasticsearch.ElasticSearchPipeline': 500
 }
 
-ELASTICSEARCH_SERVERS = ['54.208.198.203']
-ELASTICSEARCH_INDEX = 'scrapy'
-ELASTICSEARCH_INDEX_DATE_FORMAT = '%Y-%m'
+ELASTICSEARCH_SERVERS = ['34.201.52.123']
+ELASTICSEARCH_INDEX = 'packetstormsecurity'
+#ELASTICSEARCH_INDEX_DATE_FORMAT = '%Y-%m'
 ELASTICSEARCH_TYPE = 'items'
 ELASTICSEARCH_UNIQ_KEY = 'title' # Custom uniqe key
 # Enable and configure the AutoThrottle extension (disabled by default)
