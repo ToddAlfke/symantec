@@ -1,7 +1,13 @@
 ## Import required python libraries and modules such as ItemLoader and Item Class
+import time
 import scrapy
 from scrapy.loader import ItemLoader
 from packetstormsecurity.items import PacketstormsecurityItem
+
+ts = time.gmtime()
+timestamp = (time.strftime("%Y-%m-%d %H:%M:%S", ts))
+# Ouput example GMT 2019-02-26 15:59:56
+
 
 ## Setup Crawl with allowed_domains and start_urls to be Crawled
 class CharlotteSpider(scrapy.Spider):
@@ -34,4 +40,5 @@ class CharlotteSpider(scrapy.Spider):
             item['tags'] = tags
             item['cve'] = cve
             item['link'] = link
+            item['timestamp'] = timestamp
             yield item
