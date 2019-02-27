@@ -8,3 +8,4 @@ class PacketstormsecurityItem(scrapy.Item):
     tags = scrapy.Field()
     cve = scrapy.Field()
     link = scrapy.Field()
+    timestamp = scrapy.Field()
