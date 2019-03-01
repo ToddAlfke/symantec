@@ -1,7 +1,12 @@
 ## Import required python libraries and modules such as ItemLoader and Item Class
+import time
 import scrapy
 from scrapy.loader import ItemLoader
 from netsparker.items import NetsparkerItem
+
+ts = time.gmtime()
+timestamp = (time.strftime("%Y-%m-%d %H:%M:%S", ts))
+# Ouput example GMT 2019-02-26 15:59:56
 
 ## Setup Crawl with allowed_domains and start_urls to be Crawled
 class CharlotteSpider(scrapy.Spider):
@@ -23,8 +28,8 @@ class CharlotteSpider(scrapy.Spider):
 ## Items will be imported into ElasticSearch via Scrapy ElasticSearch
 ## See settings.py line item ITEM_PIPELINES for ElasticSearch import setting
             item = NetsparkerItem()
-            item['ns_id'] = title
-            item['name'] = refer
+            item['ns_id'] = ns_id
+            item['name'] = name
             item['link'] = link
-#            item['datetime'] = datetime
+            item['datetime'] = datetime
             yield item
