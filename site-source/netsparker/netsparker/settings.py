@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Scrapy settings for packetstormsecurity project
+# Scrapy settings for netsparker project
 #
 # For simplicity, this file contains only settings considered important or
 # commonly used. You can find more settings consulting the documentation:
@@ -9,14 +9,14 @@
 #     https://doc.scrapy.org/en/latest/topics/downloader-middleware.html
 #     https://doc.scrapy.org/en/latest/topics/spider-middleware.html
 
-BOT_NAME = 'packetstormsecurity'
+BOT_NAME = 'netsparker'
 
-SPIDER_MODULES = ['packetstormsecurity.spiders']
-NEWSPIDER_MODULE = 'packetstormsecurity.spiders'
+SPIDER_MODULES = ['netsparker.spiders']
+NEWSPIDER_MODULE = 'netsparker.spiders'
 
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
-#USER_AGENT = 'packetstormsecurity (+http://www.yourdomain.com)'
+#USER_AGENT = 'netsparker (+http://www.yourdomain.com)'
 
 # Obey robots.txt rules
 ROBOTSTXT_OBEY = True
@@ -47,13 +47,13 @@ ROBOTSTXT_OBEY = True
 # Enable or disable spider middlewares
 # See https://doc.scrapy.org/en/latest/topics/spider-middleware.html
 #SPIDER_MIDDLEWARES = {
-#    'packetstormsecurity.middlewares.PacketstormsecuritySpiderMiddleware': 543,
+#    'netsparker.middlewares.NetsparkerSpiderMiddleware': 543,
 #}
 
 # Enable or disable downloader middlewares
 # See https://doc.scrapy.org/en/latest/topics/downloader-middleware.html
 #DOWNLOADER_MIDDLEWARES = {
-#    'packetstormsecurity.middlewares.PacketstormsecurityDownloaderMiddleware': 543,
+#    'netsparker.middlewares.NetsparkerDownloaderMiddleware': 543,
 #}
 
 # Enable or disable extensions
@@ -65,14 +65,14 @@ ROBOTSTXT_OBEY = True
 # Configure item pipelines
 # See https://doc.scrapy.org/en/latest/topics/item-pipeline.html
 #ITEM_PIPELINES = {
-#    'packetstormsecurity.pipelines.PacketstormsecurityPipeline': 300,
+#    'netsparker.pipelines.NetsparkerPipeline': 300,
 #}
 ITEM_PIPELINES = {
 'scrapyelasticsearch.scrapyelasticsearch.ElasticSearchPipeline': 500
 }
 
-ELASTICSEARCH_SERVERS = ['34.201.52.123']
-ELASTICSEARCH_INDEX = 'packetstormsecurity'
+ELASTICSEARCH_SERVERS = ['3.88.225.82']
+ELASTICSEARCH_INDEX = 'netsparker'
 #ELASTICSEARCH_INDEX_DATE_FORMAT = '%Y-%m'
 ELASTICSEARCH_TYPE = 'items'
 ELASTICSEARCH_UNIQ_KEY = 'title' # Custom uniqe key
