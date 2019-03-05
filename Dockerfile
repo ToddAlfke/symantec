@@ -10,7 +10,7 @@ RUN apt-get update -y && \
     pip install scrapyelasticsearch
 
 #RUN apt-get install -y git && \
-#git clone -b master https://6d614c9cb980b20afc72b102b90dba71318a793f:x-oauth-basic@https://github.com/ToddAlfke/symantec.git ~
+#git clone -b master https://<token>:x-oauth-basic@https://github.com/ToddAlfke/symantec.git ~
 #or
 COPY . /home/ubuntu/
 
