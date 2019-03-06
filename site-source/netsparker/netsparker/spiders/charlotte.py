@@ -31,5 +31,5 @@ class CharlotteSpider(scrapy.Spider):
             item['ns_id'] = ns_id
             item['name'] = name
             item['link'] = link
-            item['datetime'] = datetime
+            item['timestamp'] = timestamp
             yield item

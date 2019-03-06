@@ -1,3 +1,6 @@
+import sys
+sys.path.append('/home/ubuntu/')
+from ElasticsearchConfig import *
 # -*- coding: utf-8 -*-
 
 # Scrapy settings for packetstormsecurity project
@@ -71,7 +74,7 @@ ITEM_PIPELINES = {
 'scrapyelasticsearch.scrapyelasticsearch.ElasticSearchPipeline': 500
 }
 
-ELASTICSEARCH_SERVERS = ['3.88.225.82']
+ELASTICSEARCH_SERVERS = [ElasticsearchIP]
 ELASTICSEARCH_INDEX = 'packetstormsecurity'
 #ELASTICSEARCH_INDEX_DATE_FORMAT = '%Y-%m'
 ELASTICSEARCH_TYPE = 'items'
