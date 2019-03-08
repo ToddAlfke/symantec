@@ -1,5 +1,5 @@
 import sys
-sys.path.append('/home/ubuntu/')
+sys.path.append('/etc/environment')
 from ElasticsearchConfig import *
 # -*- coding: utf-8 -*-
 

@@ -1,4 +1,8 @@
+#### This is a Python Scrapy Spider ####
 FROM ubuntu:latest
+
+ENV ENVIRONMENT=/home/ubuntu
+#ENV ENVIRONMENT=/volume
 
 RUN apt-get update -y && \
     apt-get install python3 -y && \
@@ -11,10 +15,14 @@ RUN apt-get update -y && \
     pip install elasticsearch
 
 #RUN apt-get install -y git && \
-#git clone -b master https://<token>:x-oauth-basic@https://github.com/ToddAlfke/symantec.git ~
+#git clone -b master https://<token>:x-oauth-basic@https://github.com/ToddAlfke/symantec.git $ENVIRONMENT
 #or
-COPY . /home/ubuntu/
+COPY . $ENVIRONMENT
 
-WORKDIR /home/ubuntu/
+RUN ln -s $ENVIRONMENT env && \
+    cp -r env /etc/environment
+
+WORKDIR $ENVIRONMENT
+
 
 #ENTRYPOINT ["python", "charlottesweb.py"]
