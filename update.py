@@ -1,19 +1,20 @@
 import sys
 import smtplib
-#import re
-#import glob
 from elasticsearch import Elasticsearch
 from elasticsearch import Elasticsearch,helpers
 from elasticsearch.helpers import scan
 from ElasticsearchConfig import *
-#################################
+#import re
+#import glob
 
+###########################################
+### Import from ElasticsearchConfig Modlue
 es = Elasticsearch(ElasticsearchIP)
+###########################################
 
-#################################
-
-
-################  TESTING  ################
+### Utilization of Elastisearch-PY for iterating through index, document_type, and _id ###
+### Parsing Version number and Source to get update to notify channels
+########  TESTING Glob Import ########
 #Projects = glob.glob('site-source/*')
 Projects = ['packetstormsecurity', 'netsparker']
 #def getUpdate():
@@ -24,14 +25,15 @@ for project in Projects:
         res = es.get(index=project, doc_type='items', id=item_id)
         version = (res["_version"])
         source = (res["_source"])
-        if version == 7:
+        if version == 1:
            print(source)
+
 #getUpdate()
 #message = str(getUpdate)
 
 #server = smtplib.SMTP('smtp.gmail.com', 587)
 #server.starttls()
-#server.login("todd.alfke@gmail.com", "")
+#server.login("todd.alfke@gmail.com", "YOUR PASSWORD GOES HERE")
 
 
 #msg = message

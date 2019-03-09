@@ -1,4 +1,4 @@
-#### This is a Python Scrapy Spider ####
+#### This is a Python Scrapy Spider CharlottesWeb ####
 FROM ubuntu:latest
 
 ENV ENVIRONMENT=/home/ubuntu
