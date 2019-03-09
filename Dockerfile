@@ -1,8 +1,8 @@
 #### This is a Python Scrapy Spider CharlottesWeb ####
 FROM ubuntu:latest
-
 ENV ENVIRONMENT=/home/ubuntu
-#ENV ENVIRONMENT=/volume
+#VOLUME /data
+#ENV ENVIRONMENT=/data
 
 RUN apt-get update -y && \
     apt-get install python3 -y && \
@@ -25,4 +25,4 @@ RUN ln -s $ENVIRONMENT env && \
 WORKDIR $ENVIRONMENT
 
 
-#ENTRYPOINT ["python", "charlottesweb.py"]
+ENTRYPOINT ["python", "charlottesweb.py"]
