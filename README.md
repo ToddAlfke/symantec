@@ -16,7 +16,7 @@ If the repo is pulled down from Git and injected into container with no persiste
 To run with persistent volume store
 
  `docker volume create --name vol`
- 
+
  `docker run -d -v vol:/data charlottesweb `
 
 Dockerfile
@@ -33,7 +33,7 @@ Running the container an ENTRYPOINT module charlottesweb.py initializes the Scra
 
 ``Connection to Elasticsearch failed. Update Elasticsearch configuration and try again.``
 
-You must have a running instance of Elastisearch with access to port 9200 for API and update the ElasticsearchConfig.py module with the IP address for your node or cluster. There is a provided ELK Docker stack within the docker directory of this repo.
+  You must have a running instance of Elastisearch with access to port 9200 for API and update the ElasticsearchConfig.py module with the IP address for your node or cluster. There is a provided ELK Docker stack within the docker directory of this repo.
 
 2. After the first run of charlottesweb an index, type, and objects will populate Elastisearch. Kibana may be used for creating an index pattern to view your imported data.
 
