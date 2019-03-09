@@ -5,13 +5,16 @@ This is a Python Scrapy Elasticsearch project that scrapes unstructured data fro
 
 ## Docker
 ### TO BUILD:
+
  `docker build -t charlottesweb .`
 
 ### TO RUN:
 If the repo is pulled down from Git and injected into container with no persistent volume store
+
  `docker run -d charlottesweb`
 
 To run with persistent volume store
+
  `docker volume create --name vol`
  `docker run -d -v vol:/data charlottesweb `
 
