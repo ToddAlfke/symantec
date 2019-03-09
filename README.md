@@ -16,6 +16,7 @@ If the repo is pulled down from Git and injected into container with no persiste
 To run with persistent volume store
 
  `docker volume create --name vol`
+ 
  `docker run -d -v vol:/data charlottesweb `
 
 Dockerfile
